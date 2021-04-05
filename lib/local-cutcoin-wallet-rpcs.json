@@ -1,0 +1,25 @@
+{
+  "mainnet": [
+    {
+      "hostname": "127.0.0.1",
+      "port": 24250,
+      "protocol": "http"
+    }
+  ],
+  "testnet": [
+    {
+      "hostname": "127.0.0.1",
+      "port": 25250,
+      "protocol": "http"
+    }
+  ],
+  "stagenet": [
+    {
+      "hostname": "127.0.0.1",
+      "port": 26250,
+      "protocol": "http"
+    }
+  ]
+}
+
+

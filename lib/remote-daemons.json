@@ -1,0 +1,12 @@
+{
+  "mainnet": [
+    {
+      "hostname": "rpc.cutcoin.org",
+      "port": 24242,
+      "protocol": "http",
+      "remote": true
+    }
+  ],
+  "testnet": [],
+  "stagenet": []
+}

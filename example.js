@@ -1,40 +1,35 @@
-// const Monero = require('moneronodejs'); // Used when accessing class outside of library
-const Monero = require('./index.js'); // Used when accessing class from within library
-
-// Connect synchronously
-// const daemonRPC = new Monero.daemonRPC();
-// const daemonRPC = new Monero.daemonRPC('127.0.0.1', 28081, 'user', 'pass', 'http'); // Example of passing in parameters
-// const daemonRPC = new Monero.daemonRPC({ port: 28081, protocol: 'https'); // Parameters can be passed in as an object/dictionary
-const daemonRPC = new Monero.daemonRPC({ hostname: '127.0.0.1', port: 28081 });
-
-daemonRPC.getblockcount()
-.then(height => {
-  console.log(height);
-});
-
-const walletRPC = new Monero.walletRPC();
-
-walletRPC.create_wallet('monero_wallet', '')
-.then(new_wallet => {
-  walletRPC.open_wallet('monero_wallet', '')
-  .then(wallet => {
-    walletRPC.getaddress()
-    .then(balance => {
-      console.log(balance);
-    });
-  });
-});
+// const Cutcoin = require('cutcoinjs'); // Used when accessing class outside of library
+const Cutcoin = require('./index.js'); // Used when accessing class from within library
 
 // Autoconnect asynchronously (with a promise)
-var daemonRPC = new Monero.daemonRPC({ autoconnect: true, random: true })
-.then((daemon) => {
-  daemonRPC = daemon;
+var daemonRPC = new Cutcoin.daemonRPC({ autoconnect: true, random: true })
+.then(daemon => {
+  daemonRPC = daemon; // Store daemon interface in global variable
   
   daemonRPC.getblockcount()
   .then(blocks => {
-    console.log(blocks['count'] - 1);
+    console.log(`Block count: ${blocks['count'] - 1}`);
   });
 })
-.catch((error) => {
-  console.error(error);
+.catch(err => {
+  console.error(err);
+});
+
+var walletRPC = new Cutcoin.walletRPC()
+.then(wallet => {
+  walletRPC = wallet; // Store wallet interface in global variable
+
+  walletRPC.create_wallet('cutcoin_wallet', '')
+  .then(new_wallet => {
+    walletRPC.open_wallet('cutcoin_wallet', '')
+    .then(wallet => {
+      walletRPC.getaddress()
+      .then(balance => {
+        console.log(balance);
+      });
+    });
+  });
+})
+.catch(err => {
+  console.error(err);
 });
