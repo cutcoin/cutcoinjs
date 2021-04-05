@@ -1,34 +1,36 @@
 {
-  "name": "moneronodejs",
-  "version": "1.0.0",
-  "description": "A Monero library written in Node.js by the Monero-Integrations team.",
+  "name": "cutcoinjs",
+  "version": "1.0.2",
+  "description": "ES6 JavaScript Cutcoin library",
   "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/monero-integrations/moneronodejs.git"
+    "url": "git+https://github.com/cutcoin/cutcoinjs"
   },
   "keywords": [
-    "monero"
+    "cutcoin"
   ],
-  "author": "Monero-Integrations team <support@monerointegrations.com> (https://monerointegrations.com)",
+  "author": "cutcoin <info@cutcoin.org> (https://github.com/cutcoin)",
   "constributors": [
-    "SerHack <nico@serhack.me> (https://serhack.me)",
+    "cutcoin <info@cutcoin.org>",
     "sneurlax <sneurlax@gmail.com>"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/monero-integrations/moneronodejs/issues"
+    "url": "https://github.com/cutcoin/cutcoinjs/issues"
   },
-  "homepage": "https://github.com/monero-integrations/moneronodejs#readme",
+  "homepage": "https://github.com/cutcoin/cutcoinjs#readme",
   "dependencies": {
-    "request": "^2.85.0",
-    "request-promise": "^4.2.2"
+    "axios": "^0.21.1"
   },
   "devDependencies": {
-    "mocha": "^2.4.5",
+    "mocha": "^5.2.0",
     "should": "^8.3.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   }
 }
